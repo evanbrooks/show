@@ -115,9 +115,10 @@ function cancelTilt() {
 
 var timer = {
   count: 0,
-  goal: 1000,
+  goal: 2000,
   running: false,
   resetting: false,
+  started: 0,
   el: document.getElementById('activetimer'),
   inner: document.getElementById('activetimerinner'),
   cancel: function() {
@@ -127,6 +128,7 @@ var timer = {
   reset_and_start: function() {
     timer.resetting = true;
     timer.running = true;
+    timer.started = Date.now()
     timer.step();
   },
   step: function() {
@@ -143,12 +145,14 @@ var timer = {
         timer.count = 0;
       }
     }
-    else {
-      timer.count++;
+
+    if (timer.running) {
+      //timer.count++;
+      timer.count = Date.now() - timer.started;
+      console.log(timer.count);
     }
 
     timer.inner.style.webkitTransform = "scale(" + timer.count/timer.goal + ")";
-
 
     if (timer.count > timer.goal) {
       timer.callback();
@@ -160,4 +164,3 @@ var timer = {
     alert("test callback")
   }
 }
-timer.step();
