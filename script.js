@@ -20,11 +20,14 @@ function tilt_update() {
   roll_log.innerText = roll;
 
 
-  if (tilt > 70 && !good_tilt) {
+
+  var sum = Math.abs(tilt) + Math.abs(roll);
+
+  if (sum > 70 && !good_tilt) {
     good_tilt = true;
     document.body.classList.add("goodtilt");
   }
-  else if (tilt < 70 && good_tilt) {
+  else if (sum < 70 && good_tilt) {
     good_tilt = false;
     document.body.classList.remove("goodtilt");
   }
