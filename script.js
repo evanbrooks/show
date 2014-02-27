@@ -3,31 +3,38 @@ var tilt = -3, roll = 0;
 var good_tilt = false;
 var regions = [
   {
-    angle: [-40, -30],
+    tilt: 45,
+    roll: -1,
     name: "agamatrix"
   },
   {
-    angle: [-30, -20],
+    tilt: 60,
+    roll: -1,
     name: "bird"
   },
   {
-    angle: [-20, -10],
+    tilt: 75,
+    roll: -1,
     name: "arduino"
   },
   {
-    angle: [-10, 10],
+    tilt: 90,
+    roll: 0,
     name: "code"
   },
   {
-    angle: [10, 20],
+    tilt: 75,
+    roll: 1,
     name: "ripta"
   },
   {
-    angle: [20, 30],
+    tilt: 60,
+    roll: 1,
     name: "bioscopic"
   },
   {
-    angle: [30, 40],
+    tilt: 45,
+    roll: 1,
     name: "locu"
   },
 ];
@@ -71,7 +78,15 @@ function tilt_update() {
 
   if (good_tilt) {
     for (var i = 0; i < regions.length; i++) {
-      if (tilt < regions[i].angle[0] && tilt > regions[i].angle[1]) {
+      var r = regions[i];
+      var region_triggered = false;
+      if ((roll < 0 && r.roll < 0)||(roll > 0 && r.roll > 0)||(r.roll == 0)) {
+        if (Math.abs(r.tilt - tilt) < 5) {
+          region_triggered = true;
+        }
+      }
+
+      if (region_triggered) {
         if (active_article) active_article.el.classList.remove("active");
         active_article = regions[i];
         active_article.el.classList.add("active");
