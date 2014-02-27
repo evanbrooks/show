@@ -13,7 +13,7 @@ var regions = [
     name: "bird"
   },
   {
-    tilt: 75,
+    tilt: 70,
     roll: -1,
     name: "arduino"
   },
@@ -23,7 +23,7 @@ var regions = [
     name: "code"
   },
   {
-    tilt: 75,
+    tilt: 70,
     roll: 1,
     name: "ripta"
   },
