@@ -80,7 +80,7 @@ function tilt_update() {
   tilt_log.innerText = tilt;
   roll_log.innerText = roll;
 
-  if (delt_tilt < 1) {
+  if (delt_tilt < 0.2) {
     steady_timer = setTimeout(function(){
       steady_log.innerText = "yes";
       is_steady = true;
