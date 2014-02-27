@@ -1,6 +1,3 @@
-var tilt = -3, roll = 0;
-
-var good_tilt = false;
 var regions = [
   {
     tilt: 45,
@@ -38,12 +35,19 @@ var regions = [
     name: "locu"
   },
 ];
+
+var tilt = -3, roll = 0;
+var delt_tilt = 0, last_tilt = 0;
+
+var good_tilt = false;
+
 var active_article
   , active_timer
   , active_timer_el = document.getElementById('activetimer')
   , active_timer_max = 3000 // ms
   , tilt_log = document.getElementById('tilt')
   , roll_log = document.getElementById('roll')
+  , steady_log = document.getElementById('steady')
   ;
 
 for (var i = 0; i < regions.length; i++) {
@@ -58,7 +62,10 @@ function tilt_detect(event) {
   t = event.beta;
   r = event.gamma;
 
+  last_tilt = tilt;
   tilt = ~~(t * 1000) / 1000;
+  delt_tilt = tilt - last_tilt;
+
   roll = ~~(r * 1000) / 1000;
   tilt_update()
 }
@@ -66,6 +73,13 @@ function tilt_detect(event) {
 function tilt_update() {
   tilt_log.innerText = tilt;
   roll_log.innerText = roll;
+
+  if (delt_tilt < 3) {
+    steady_log.innerText = "yes";
+  }
+  else {
+    steady_log.innerText = "no";
+  }
 
 
 
