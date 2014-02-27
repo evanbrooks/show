@@ -42,7 +42,7 @@ var tilt = -3
   , last_tilt = 0
   , steady_timer
   , is_steady
-  , steady_delay = 2000 // ms
+  , steady_delay = 3000 // ms
   ;
 
 var good_tilt = false;
