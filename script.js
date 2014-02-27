@@ -115,7 +115,7 @@ function cancelTilt() {
 
 var timer = {
   count: 0,
-  goal: 500,
+  goal: 1000,
   running: false,
   el: document.getElementById('activetimer'),
   inner: document.getElementById('activetimerinner'),
