@@ -38,7 +38,13 @@ var regions = [
     name: "locu"
   },
 ];
-var active_article;
+var active_article
+  , active_timer
+  , active_timer_el = document.getElementById('activetimer')
+  , active_timer_max = 3000 // ms
+  , tilt_log = document.getElementById('tilt')
+  , roll_log = document.getElementById('roll')
+  ;
 
 for (var i = 0; i < regions.length; i++) {
   regions[i].el = document.querySelector("." + regions[i].name);
@@ -46,8 +52,6 @@ for (var i = 0; i < regions.length; i++) {
 
 window.addEventListener("deviceorientation", tilt_detect, true);
 
-tilt_log = document.getElementById('tilt');
-roll_log = document.getElementById('roll');
 
 
 function tilt_detect(event) {
@@ -74,6 +78,7 @@ function tilt_update() {
   else if ((sum < 70 || tilt < 30) && good_tilt) {
     good_tilt = false;
     document.body.classList.remove("goodtilt");
+    cancelTilt();
   }
 
   if (good_tilt) {
@@ -86,13 +91,29 @@ function tilt_update() {
         }
       }
 
-      if (region_triggered) {
+      if (region_triggered && active_article !== r) {
+        clearTimeout(active_timer);
+
+        active_timer_el.classList.remove("timer-active");
+        active_timer_el.classList.add("timer-active");
+
+        active_timer = setTimeout(function(){
+          active_timer_el.classList.remove("timer-active");
+          alert("article selected");
+        }, active_timer_max);
         if (active_article) active_article.el.classList.remove("active");
-        active_article = regions[i];
+        active_article = r;
         active_article.el.classList.add("active");
         return;
       }
     }
   }
 
+}
+
+function cancelTilt() {
+  clearTimeout(active_timer);
+  if (active_article) active_article.el.classList.remove("active");
+  active_article = null;
+  active_timer_el.classList.remove("timer-active");
 }
