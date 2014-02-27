@@ -29,7 +29,7 @@ function tilt_update() {
     document.body.classList.add("goodtilt");
 
   }
-  else if (sum < 70 && tilt < 40 good_tilt) {
+  else if (sum < 70 && tilt < 40 && good_tilt) {
 
     good_tilt = false;
     document.body.classList.remove("goodtilt");
