@@ -134,7 +134,7 @@ nav {
       height: 100%; }
     .phone.real .inner {
       -webkit-transform: translate3d(0, 0, 1px);
-      background: #89818f; }
+      background: #847da2; }
     .phone.real .homebtn {
       border: 1px solid #89818f;
       -webkit-transform: translate3d(0, 0, 1px); }
@@ -239,7 +239,8 @@ article {
 .swipe {
   overflow: hidden;
   visibility: hidden;
-  position: relative; }
+  position: relative;
+  margin: 0 -0.3em; }
 
 .swipe-wrap {
   overflow: hidden;
@@ -249,3 +250,6 @@ article {
   float: left;
   width: 100%;
   position: relative; }
+
+img {
+  max-width: 100%; }
