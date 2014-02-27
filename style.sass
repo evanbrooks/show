@@ -17,6 +17,9 @@ $back: #FDCE37
   100%
     opacity: 1
 
+body, html
+  overflow: hidden
+
 
 body
   background: $back
@@ -213,8 +216,9 @@ article
   opacity: 1
 
 #detailviewer
-  -webkit-transform: translate3d(0,-100%,0)
-  -webkit-transition: all 0.4s cubic-bezier(0.275, 1.470, 0.155, 1.010)
+  -webkit-transform: translate3d(0,100%,0)
+  visibility: hidden
+  -webkit-transition: all 0.8s cubic-bezier(0.275, 1.470, 0.155, 1.010)
   background: white
   position: fixed
   top: 0
@@ -225,3 +229,4 @@ article
   -webkit-overflow-scrolling: touch
   .viewing-detail &
     -webkit-transform: translate3d(0,0,0)
+    visibility: visible

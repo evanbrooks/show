@@ -16,6 +16,9 @@ html {
   100% {
     opacity: 1; } }
 
+body, html {
+  overflow: hidden; }
+
 body {
   background: #fdce37;
   color: black;
@@ -193,8 +196,9 @@ article {
   opacity: 1; }
 
 #detailviewer {
-  -webkit-transform: translate3d(0, -100%, 0);
-  -webkit-transition: all 0.4s cubic-bezier(0.275, 1.47, 0.155, 1.01);
+  -webkit-transform: translate3d(0, 100%, 0);
+  visibility: hidden;
+  -webkit-transition: all 0.8s cubic-bezier(0.275, 1.47, 0.155, 1.01);
   background: white;
   position: fixed;
   top: 0;
@@ -204,4 +208,5 @@ article {
   overflow: scroll;
   -webkit-overflow-scrolling: touch; }
   .viewing-detail #detailviewer {
-    -webkit-transform: translate3d(0, 0, 0); }
+    -webkit-transform: translate3d(0, 0, 0);
+    visibility: visible; }
