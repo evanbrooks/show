@@ -9,6 +9,13 @@
 html {
   font: 24px/1.3 "Open Sans", sans-serif; }
 
+@-webkit-keyframes entrance {
+  0% {
+    opacity: 0; }
+
+  100% {
+    opacity: 1; } }
+
 body {
   background: #f8ea45;
   color: black;
@@ -22,8 +29,15 @@ section {
   position: relative;
   padding: 0.3em; }
 
+.intro {
+  -webkit-transition: all 0.5s;
+  visibility: visible;
+  -webkit-transform: scale(1); }
+
 .goodtilt .intro {
-  display: none; }
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transform: scale(0.8); }
 .goodtilt .pickitem {
   display: block; }
 
@@ -135,6 +149,17 @@ nav {
     -webkit-transform: translate3d(0, 0, 250px); } }
 
 article {
-  display: none; }
+  visibility: hidden;
+  opacity: 0;
+  -webkit-transition: all 0.2s;
+  -webkit-transform: scale(0.8);
+  background: white;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0; }
   article.active {
-    display: block; }
+    visibility: visible;
+    -webkit-transform: scale(1);
+    opacity: 1; }
