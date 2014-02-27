@@ -96,11 +96,11 @@ function tilt_update() {
 
         active_timer_el.classList.remove("timer-active");
         active_timer_el.classList.add("timer-reset");
-        
+
         setTimeout(function(){
           active_timer_el.classList.remove("timer-reset");
           active_timer_el.classList.add("timer-active");
-        },10)
+        }, 30)
 
         active_timer = setTimeout(function(){
           active_timer_el.classList.remove("timer-active");
