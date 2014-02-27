@@ -7,7 +7,7 @@
   box-sizing: border-box; }
 
 html {
-  font: 24px/1.5 "Open Sans", sans-serif; }
+  font: 32px/1.5 "Open Sans", sans-serif; }
 
 body {
   background: yellow;
@@ -80,6 +80,7 @@ nav {
     border-radius: 50%;
     bottom: 5px; }
   .phone.outline {
+    -webkit-transform: rotateZ(-40deg);
     border: 1px solid black; }
     .phone.outline .inner {
       border-top: 1px solid black;
@@ -113,7 +114,7 @@ nav {
     -webkit-transform: translate3d(0, 0, 250px); }
 
   50% {
-    -webkit-transform: translate3d(0, 0, 20px);
+    -webkit-transform: translate3d(0, 0, 20px) rotateZ(-40deg);
     box-shadow: 20px 10px 3px rgba(0, 0, 0, 0.3); }
 
   100% {

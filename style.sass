@@ -7,7 +7,7 @@
   box-sizing: border-box
 
 html
-  font: 24px/1.5 "Open Sans", sans-serif
+  font: 32px/1.5 "Open Sans", sans-serif
 
 body
   background: yellow
@@ -65,6 +65,7 @@ $iphoneheight: 310px
   border-radius: 20px
   position: absolute
   right: 20px
+
   // -webkit-animation: spin infinite 6s
   .earpiece
     width: 40px
@@ -86,6 +87,7 @@ $iphoneheight: 310px
     border-radius: 50%
     bottom: 5px
   &.outline
+    -webkit-transform: rotateZ(-40deg)
     border: 1px solid black
     .inner
       border-top: 1px solid black
@@ -117,9 +119,9 @@ $iphoneheight: 310px
 
 @-webkit-keyframes bump
   0%
-    -webkit-transform: translate3d(0,0,250px)
+    -webkit-transform: translate3d(0,0,250px) 
   50%
-    -webkit-transform: translate3d(0,0,20px)
+    -webkit-transform: translate3d(0,0,20px) rotateZ(-40deg)
     box-shadow: 20px 10px 3px rgba(black,0.3)
   100%
     -webkit-transform: translate3d(0,0,250px)
