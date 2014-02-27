@@ -41,6 +41,8 @@ var tilt = -3
   , delt_tilt = 0
   , last_tilt = 0
   , steady_timer
+  , is_steady
+  , steady_delay = 2000 // ms
   ;
 
 var good_tilt = false;
@@ -81,11 +83,13 @@ function tilt_update() {
   if (delt_tilt < 1) {
     steady_timer = setTimeout(function(){
       steady_log.innerText = "yes";
-    }, 3000);
+      is_steady = true;
+    }, steady_delay);
   }
   else {
     clearTimeout(steady_timer);
     steady_log.innerText = "no";
+    is_steady = false;
   }
 
 
@@ -109,6 +113,10 @@ function tilt_update() {
         if (Math.abs(r.tilt - tilt) < 5) {
           region_triggered = true;
         }
+      }
+
+      if (!is_steady) {
+        timer.cancel();
       }
 
       if (region_triggered && active_article !== r) {
