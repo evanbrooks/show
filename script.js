@@ -44,6 +44,7 @@ var tilt = -3
   , is_steady
   , steady_delay = 3000 // ms
   , viewing_detail = false
+  , dismiss_btn = document.getElementById('detaildismisser')
   ;
 
 var good_tilt = false;
@@ -63,7 +64,16 @@ for (var i = 0; i < regions.length; i++) {
 
 window.addEventListener("deviceorientation", tilt_detect, true);
 
+dismiss_btn.addEventListener("click", dismiss_detail, false);
+dismiss_btn.addEventListener("touchbegin", dismiss_detail, false);
 
+function dismiss_detail(e) {
+  e.preventDefault();
+  viewing_detail = false;
+  document.body.classList.remove("viewing-detail");
+}
+
+window.mySwipe = Swipe(document.getElementById('slider'));
 
 function tilt_detect(event) {
   t = event.beta;

@@ -212,3 +212,17 @@ article {
     opacity: 1;
     -webkit-transform: translate3d(0, 0, 0);
     visibility: visible; }
+
+.swipe {
+  overflow: hidden;
+  visibility: hidden;
+  position: relative; }
+
+.swipe-wrap {
+  overflow: hidden;
+  position: relative; }
+
+.swipe-wrap > div {
+  float: left;
+  width: 100%;
+  position: relative; }
