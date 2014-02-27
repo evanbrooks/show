@@ -81,13 +81,12 @@ function tilt_update() {
   if (delt_tilt < 2) {
     steady_timer = setTimeout(function(){
       steady_log.innerText = "yes";
-    }, 1000);
+    }, 3000);
   }
   else {
     clearTimeout(steady_timer);
     steady_log.innerText = "no";
   }
-
 
 
   var sum = Math.abs(tilt) + Math.abs(roll);
