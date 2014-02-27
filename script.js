@@ -112,7 +112,8 @@ function tilt_update() {
       timer.hide();
     }
     else {
-      if (!timer.is_running()){
+      if (!timer.running){
+        timer.show();
         timer.reset_and_start();
       }
     }
@@ -140,6 +141,7 @@ function tilt_update() {
 
 function cancelTilt() {
   timer.cancel();
+  timer.hide();
   if (active_article) active_article.el.classList.remove("active");
   active_article = null;
 }
@@ -202,7 +204,4 @@ var timer = {
   show: function() {
     el.classList.add("timer-active");
   },
-  is_running: function() {
-    return running;
-  }
 }
