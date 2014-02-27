@@ -94,8 +94,11 @@ function tilt_update() {
       if (region_triggered && active_article !== r) {
         clearTimeout(active_timer);
 
-        active_timer_el.classList.remove("timer-active");
+        active_timer_el.classList.add("timer-reset");
         active_timer_el.classList.add("timer-active");
+        setTimeout(function(){
+          active_timer_el.classList.remove("timer-reset");
+        },10)
 
         active_timer = setTimeout(function(){
           active_timer_el.classList.remove("timer-active");
