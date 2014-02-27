@@ -36,8 +36,12 @@ var regions = [
   },
 ];
 
-var tilt = -3, roll = 0;
-var delt_tilt = 0, last_tilt = 0;
+var tilt = -3
+  , roll = 0
+  , delt_tilt = 0
+  , last_tilt = 0
+  , steady_timer
+  ;
 
 var good_tilt = false;
 
@@ -75,9 +79,12 @@ function tilt_update() {
   roll_log.innerText = roll;
 
   if (delt_tilt < 3) {
-    steady_log.innerText = "yes";
+    steady_timer = setTimeout(function(){
+      steady_log.innerText = "yes";
+    }, 1000);
   }
   else {
+    clearTimeout(steady_timer);
     steady_log.innerText = "no";
   }
 
