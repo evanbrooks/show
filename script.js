@@ -132,7 +132,7 @@ function tilt_update() {
         if (active_article) active_article.el.classList.remove("active");
         active_article = r;
         active_article.el.classList.add("active");
-        break;
+        return;
       }
     }
   }
