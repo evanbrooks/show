@@ -92,20 +92,9 @@ function tilt_update() {
       }
 
       if (region_triggered && active_article !== r) {
-        clearTimeout(active_timer);
-
-        active_timer_el.classList.remove("timer-active");
-        active_timer_el.classList.add("timer-reset");
-
-        setTimeout(function(){
-          active_timer_el.classList.remove("timer-reset");
-          active_timer_el.classList.add("timer-active");
-        }, 30)
-
-        active_timer = setTimeout(function(){
-          active_timer_el.classList.remove("timer-active");
-          alert("article selected");
-        }, active_timer_max);
+        
+        timer.reset_and_start();
+        
         if (active_article) active_article.el.classList.remove("active");
         active_article = r;
         active_article.el.classList.add("active");
@@ -117,8 +106,42 @@ function tilt_update() {
 }
 
 function cancelTilt() {
-  clearTimeout(active_timer);
+  timer.cancel();
   if (active_article) active_article.el.classList.remove("active");
   active_article = null;
   active_timer_el.classList.remove("timer-active");
 }
+
+
+var timer = {
+  count: 0,
+  goal: 500,
+  running: false,
+  el: document.getElementById('activetimer'),
+  inner: document.getElementById('activetimerinner'),
+  cancel: function() {
+    timer.count = 0;
+    timer.running = false;
+  },
+  reset_and_start: function() {
+    timer.count = 0;
+    timer.running = true;
+    timer.step();
+  },
+  step: function() {
+    if (timer.running) {
+      window.requestAnimationFrame(timer.step);
+    }
+    timer.inner.style.webkitTransform = "scale(" + timer.count/timer.goal + ")";
+    timer.count++;
+    if (timer.count > timer.goal) {
+      timer.count = 0;
+      timer.callback();
+    }
+  },
+  callback: function() {
+    timer.running = false;
+    alert("test callback")
+  }
+}
+timer.step();
