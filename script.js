@@ -109,6 +109,12 @@ function tilt_update() {
 
     if (!is_steady) {
       timer.cancel();
+      timer.hide();
+    }
+    else {
+      if (!timer.is_running()){
+        timer.reset_and_start();
+      }
     }
 
 
@@ -120,10 +126,7 @@ function tilt_update() {
           region_triggered = true;
         }
       }
-
       if (region_triggered && active_article !== r) {
-
-        timer.reset_and_start();
         
         if (active_article) active_article.el.classList.remove("active");
         active_article = r;
@@ -139,7 +142,6 @@ function cancelTilt() {
   timer.cancel();
   if (active_article) active_article.el.classList.remove("active");
   active_article = null;
-  active_timer_el.classList.remove("timer-active");
 }
 
 
@@ -156,6 +158,7 @@ var timer = {
     timer.running = false;
   },
   reset_and_start: function() {
+    timer.show();
     timer.resetting = true;
     timer.running = true;
     timer.started = Date.now()
@@ -192,5 +195,14 @@ var timer = {
     timer.resetting = true;
     timer.running = false;
     alert("test callback")
+  },
+  hide: function() {
+    el.classList.remove("timer-active");
+  },
+  show: function() {
+    el.classList.add("timer-active");
+  },
+  is_running: function() {
+    return running;
   }
 }
