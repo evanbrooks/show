@@ -33,12 +33,13 @@ section
 
 
 .intro
-  -webkit-transition: all 0.5s
+  -webkit-transition: all 1s
   visibility: visible
 
 .goodtilt
   .intro
     opacity: 0
+    -webkit-transition: all 0.5s
     visibility: hidden
   .pickitem
     visibility: visible
@@ -164,9 +165,7 @@ $iphoneheight: 310px
 article
   visibility: hidden
   opacity: 0
-  -webkit-transition: all 0.2s
-  -webkit-transform: translate3d(0,40%,0)
-  background: white
+  -webkit-transition: all 0.5s
   position: fixed
   top: 0
   left: 0
@@ -174,7 +173,6 @@ article
   bottom: 0
   &.active
     visibility: visible
-    -webkit-transform: translate3d(0,0,0)
     opacity: 1
 
 
