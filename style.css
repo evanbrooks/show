@@ -156,6 +156,6 @@ article {
   left: 0;
   right: 0;
   bottom: 0; }
-  article.active {
+  .goodtilt article.active {
     visibility: visible;
     opacity: 1; }
