@@ -117,29 +117,45 @@ var timer = {
   count: 0,
   goal: 1000,
   running: false,
+  resetting: false,
   el: document.getElementById('activetimer'),
   inner: document.getElementById('activetimerinner'),
   cancel: function() {
-    timer.count = 0;
+    timer.resetting = true;
     timer.running = false;
   },
   reset_and_start: function() {
-    timer.count = 0;
+    timer.resetting = true;
     timer.running = true;
     timer.step();
   },
   step: function() {
-    if (timer.running) {
+    if (timer.running || timer.resetting) {
       window.requestAnimationFrame(timer.step);
     }
+
+    if (timer.resetting) {
+      if (timer.count > 10) {
+        timer.count -= 10;
+      }
+      else {
+        timer.resetting = false;
+        timer.count = 0;
+      }
+    }
+    else {
+      timer.count++;
+    }
+
     timer.inner.style.webkitTransform = "scale(" + timer.count/timer.goal + ")";
-    timer.count++;
+
+
     if (timer.count > timer.goal) {
-      timer.count = 0;
       timer.callback();
     }
   },
   callback: function() {
+    timer.resetting = true;
     timer.running = false;
     alert("test callback")
   }
