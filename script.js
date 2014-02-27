@@ -106,6 +106,12 @@ function tilt_update() {
   }
 
   if (good_tilt) {
+
+    if (!is_steady) {
+      timer.cancel();
+    }
+
+
     for (var i = 0; i < regions.length; i++) {
       var r = regions[i];
       var region_triggered = false;
@@ -115,18 +121,14 @@ function tilt_update() {
         }
       }
 
-      if (!is_steady) {
-        timer.cancel();
-      }
-
       if (region_triggered && active_article !== r) {
-        
+
         timer.reset_and_start();
         
         if (active_article) active_article.el.classList.remove("active");
         active_article = r;
         active_article.el.classList.add("active");
-        return;
+        break;
       }
     }
   }
