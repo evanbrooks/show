@@ -37,10 +37,10 @@ section {
   opacity: 0;
   visibility: hidden; }
 .goodtilt .pickitem {
-  display: block; }
+  visibility: visible; }
 
 .pickitem {
-  display: none; }
+  visibility: hidden; }
 
 nav {
   background: #f8ea45;
