@@ -199,9 +199,9 @@ var timer = {
     alert("test callback")
   },
   hide: function() {
-    el.classList.remove("timer-active");
+    timer.el.classList.remove("timer-active");
   },
   show: function() {
-    el.classList.add("timer-active");
+    timer.el.classList.add("timer-active");
   },
 }
