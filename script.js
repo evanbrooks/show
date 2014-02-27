@@ -43,6 +43,7 @@ var tilt = -3
   , steady_timer
   , is_steady
   , steady_delay = 3000 // ms
+  , viewing_detail = false
   ;
 
 var good_tilt = false;
@@ -73,7 +74,10 @@ function tilt_detect(event) {
   delt_tilt = tilt - last_tilt;
 
   roll = ~~(r * 1000) / 1000;
-  tilt_update()
+
+  if (!viewing_detail) {
+    tilt_update();
+  }
 }
 
 function tilt_update() {
@@ -196,6 +200,7 @@ var timer = {
   callback: function() {
     timer.resetting = true;
     timer.running = false;
+    viewing_detail = true;
     document.body.classList.add("viewing-detail");
   },
   hide: function() {
