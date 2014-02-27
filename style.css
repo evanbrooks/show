@@ -17,10 +17,11 @@ html {
     opacity: 1; } }
 
 body {
-  background: black;
+  background: #f8ea45;
   color: black;
   width: 320px;
-  height: 500px; }
+  height: 500px;
+  padding-top: 1em; }
 
 section {
   margin: auto;
@@ -30,16 +31,11 @@ section {
 
 .intro {
   -webkit-transition: all 0.5s;
-  background: #f8ea45;
-  visibility: visible;
-  padding-top: 1em;
-  min-height: 100%;
-  -webkit-transform: scale(1); }
+  visibility: visible; }
 
 .goodtilt .intro {
   opacity: 0;
-  visibility: hidden;
-  -webkit-transform: scale(0.8); }
+  visibility: hidden; }
 .goodtilt .pickitem {
   display: block; }
 
@@ -76,7 +72,7 @@ nav {
 .stage {
   -webkit-transform: scale(0.8) rotateX(-30deg) rotateY(-40deg) rotateZ(0deg);
   position: absolute;
-  top: -20px;
+  top: -50px;
   -webkit-transform-style: preserve-3d; }
   .stage h1 {
     margin-top: 6em;
@@ -154,7 +150,7 @@ article {
   visibility: hidden;
   opacity: 0;
   -webkit-transition: all 0.2s;
-  -webkit-transform: scale(0.8);
+  -webkit-transform: translate3d(0, 40%, 0);
   background: white;
   position: fixed;
   top: 0;
@@ -163,5 +159,5 @@ article {
   bottom: 0; }
   article.active {
     visibility: visible;
-    -webkit-transform: scale(1);
+    -webkit-transform: translate3d(0, 0, 0);
     opacity: 1; }
