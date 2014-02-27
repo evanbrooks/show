@@ -181,10 +181,6 @@ article {
   -webkit-transform: scale(0.3);
   opacity: 0; }
 
-.goodtilt .timer {
-  -webkit-transform: scale(1);
-  opacity: 1; }
-
 .timer-inner {
   background: black;
   width: 100%;
