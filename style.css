@@ -17,11 +17,10 @@ html {
     opacity: 1; } }
 
 body {
-  background: #f8ea45;
+  background: black;
   color: black;
   width: 320px;
-  height: 500px;
-  padding-top: 1em; }
+  height: 500px; }
 
 section {
   margin: auto;
@@ -31,7 +30,10 @@ section {
 
 .intro {
   -webkit-transition: all 0.5s;
+  background: #f8ea45;
   visibility: visible;
+  padding-top: 1em;
+  min-height: 100%;
   -webkit-transform: scale(1); }
 
 .goodtilt .intro {
@@ -74,7 +76,7 @@ nav {
 .stage {
   -webkit-transform: scale(0.8) rotateX(-30deg) rotateY(-40deg) rotateZ(0deg);
   position: absolute;
-  top: -50px;
+  top: -20px;
   -webkit-transform-style: preserve-3d; }
   .stage h1 {
     margin-top: 6em;
