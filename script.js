@@ -4,6 +4,8 @@ window.addEventListener("deviceorientation", tilt_detect, true);
 tilt_log = document.getElementById('tilt');
 roll_log = document.getElementById('roll');
 
+var good_tilt = false;
+
 function tilt_detect(event) {
   t = event.beta;
   r = event.gamma;
@@ -16,4 +18,15 @@ function tilt_detect(event) {
 function tilt_update() {
   tilt_log.innerText = tilt;
   roll_log.innerText = roll;
+
+
+  if (tilt > 70 && !good_tilt) {
+    good_tilt = true;
+    document.body.classList.add("goodtilt");
+  }
+  else if (tilt < 70 && good_tilt) {
+    good_tilt = false;
+    document.body.classList.remove("goodtilt");
+  }
+
 }

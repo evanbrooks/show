@@ -22,6 +22,14 @@ section {
   position: relative;
   padding: 0.3em; }
 
+.goodtilt .intro {
+  display: none; }
+.goodtilt .pickitem {
+  display: block; }
+
+.pickitem {
+  display: none; }
+
 nav {
   background: #f8ea45;
   position: fixed;
