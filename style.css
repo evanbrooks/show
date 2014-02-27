@@ -7,8 +7,7 @@
   box-sizing: border-box; }
 
 html {
-  font: 24px/1.5 "Open Sans", sans-serif;
-  background: gray; }
+  font: 24px/1.5 "Open Sans", sans-serif; }
 
 body {
   background: yellow;
@@ -52,7 +51,7 @@ nav {
     -webkit-transform: rotateX(40deg) rotateY(40deg) rotateZ(-30deg); } }
 
 .stage {
-  -webkit-transform: rotateX(-30deg) rotateY(-40deg) rotateZ(0deg);
+  -webkit-transform: scale(0.5) rotateX(-30deg) rotateY(-40deg) rotateZ(0deg);
   -webkit-transform-style: preserve-3d; }
 
 .phone {
@@ -94,7 +93,7 @@ nav {
     border-top: 2px solid white;
     border-right: 2px solid white;
     -webkit-animation: bump infinite 2s;
-    box-shadow: 150px 100px 100px rgba(0, 0, 0, 0.4); }
+    box-shadow: 270px 100px 200px rgba(0, 0, 0, 0.2); }
     .phone.real .backpanel {
       background: #aaaaaa;
       border-radius: 20px;
@@ -111,11 +110,11 @@ nav {
 
 @-webkit-keyframes bump {
   0% {
-    -webkit-transform: translate3d(0, 0, 150px); }
+    -webkit-transform: translate3d(0, 0, 250px); }
 
   50% {
     -webkit-transform: translate3d(0, 0, 20px);
-    box-shadow: 20px 10px 3px rgba(0, 0, 0, 0.2); }
+    box-shadow: 20px 10px 3px rgba(0, 0, 0, 0.3); }
 
   100% {
-    -webkit-transform: translate3d(0, 0, 150px); } }
+    -webkit-transform: translate3d(0, 0, 250px); } }
