@@ -17,7 +17,7 @@ html {
     opacity: 1; } }
 
 body {
-  background: #f8ea45;
+  background: #fdce37;
   color: black;
   width: 320px;
   height: 500px;
@@ -44,7 +44,7 @@ section {
   visibility: hidden; }
 
 nav {
-  background: #f8ea45;
+  background: #fdce37;
   position: fixed;
   bottom: 0;
   left: 0;
@@ -115,7 +115,7 @@ nav {
     .phone.outline .homebtn {
       border: 1px solid black; }
   .phone.real {
-    background: #bbbbbb;
+    background: #b6b1b6;
     -webkit-transform: translate3d(0, 0, 150px);
     -webkit-transform-style: preserve-3d;
     -webkit-animation: bump infinite 3s;
@@ -131,9 +131,9 @@ nav {
       height: 100%; }
     .phone.real .inner {
       -webkit-transform: translate3d(0, 0, 1px);
-      background: gray; }
+      background: #89818f; }
     .phone.real .homebtn {
-      border: 1px solid gray;
+      border: 1px solid #89818f;
       -webkit-transform: translate3d(0, 0, 1px); }
 
 @-webkit-keyframes bump {
@@ -143,7 +143,7 @@ nav {
   50% {
     -webkit-transform: translate3d(0, 0, 0px) rotateZ(-40deg);
     box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
-    background: #cccccc; }
+    background: #cacfde; }
 
   100% {
     -webkit-transform: translate3d(0, 0, 230px); } }
@@ -191,3 +191,17 @@ article {
 .timer-active {
   -webkit-transform: scale(1);
   opacity: 1; }
+
+#detailviewer {
+  -webkit-transform: translate3d(0, -100%, 0);
+  -webkit-transform: all 0.2s;
+  background: white;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  overflow: scroll;
+  -webkit-overflow-scrolling: touch; }
+  .viewing-detail #detailviewer {
+    -webkit-transform: translate3d(0, 0, 0); }

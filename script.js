@@ -196,7 +196,7 @@ var timer = {
   callback: function() {
     timer.resetting = true;
     timer.running = false;
-    alert("test callback")
+    document.body.classList.add("viewing-detail");
   },
   hide: function() {
     timer.el.classList.remove("timer-active");
