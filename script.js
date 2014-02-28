@@ -147,8 +147,8 @@ function tilt_update() {
         if (active_article) active_article.el.classList.remove("active");
         active_article = r;
         active_article.el.classList.add("active");
-        
-        var node = active_article.el.cloneNode();
+
+        var node = active_article.el.querySelector("h2").cloneNode();
         detail_viewer.innerHTML = '';
         detail_viewer.appendChild(node);
 
