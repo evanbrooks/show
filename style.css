@@ -254,7 +254,6 @@ article {
 
 .swipe {
   overflow: hidden;
-  visibility: hidden;
   position: relative; }
   .swipe p {
     padding: 0 1em 1em; }

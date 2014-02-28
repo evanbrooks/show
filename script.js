@@ -73,7 +73,7 @@ function dismiss_detail(e) {
   document.body.classList.remove("viewing-detail");
 }
 
-window.mySwipe = Swipe(document.getElementById('slider'));
+// window.mySwipe = Swipe(document.getElementById('slider'));
 
 function tilt_detect(event) {
   t = event.beta;
