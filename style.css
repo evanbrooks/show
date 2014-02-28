@@ -171,18 +171,19 @@ nav {
 article {
   visibility: hidden;
   opacity: 0;
-  -webkit-transition: all 0.5s;
+  -webkit-transition: all 0.5s; }
+  .goodtilt article.active {
+    visibility: visible;
+    opacity: 1; }
+
+.pickitem article {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0; }
-  .goodtilt article.active {
-    visibility: visible;
-    opacity: 1; }
-
-.pickitem article .content {
-  display: none; }
+  .pickitem article .content {
+    display: none; }
 
 @-webkit-keyframes grow {
   0% {
