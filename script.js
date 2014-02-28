@@ -45,6 +45,7 @@ var tilt = -3
   , steady_delay = 3000 // ms
   , viewing_detail = false
   , dismiss_btn = document.getElementById('detaildismisser')
+  , detail_viewer = document.getElementById('detailviewer')
   ;
 
 var good_tilt = false;
@@ -146,6 +147,11 @@ function tilt_update() {
         if (active_article) active_article.el.classList.remove("active");
         active_article = r;
         active_article.el.classList.add("active");
+        
+        detail_viewer.innerHTHML = '';
+        var node = active_article.el.cloneNode();
+        detail_viewer.appendChild(node);
+
         return;
       }
     }
