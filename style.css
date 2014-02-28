@@ -257,7 +257,7 @@ article {
   visibility: visible; }
 
 article p {
-  padding: 0 1em 1em; }
+  padding: 1em; }
 
 img, video {
   width: 100%; }
