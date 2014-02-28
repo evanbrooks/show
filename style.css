@@ -50,11 +50,6 @@ h4 {
   text-transform: uppercase;
   margin-bottom: 1em; }
 
-article {
-  background: gray; }
-  article header {
-    background: #fdce37; }
-
 .intro {
   -webkit-transition: all 1s;
   visibility: visible; }
@@ -185,6 +180,17 @@ article {
   .goodtilt article.active {
     visibility: visible;
     opacity: 1; }
+
+article {
+  background: gray; }
+  article header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    background: #fdce37; }
 
 @-webkit-keyframes grow {
   0% {
