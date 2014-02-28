@@ -148,8 +148,8 @@ function tilt_update() {
         active_article = r;
         active_article.el.classList.add("active");
         
-        detail_viewer.innerHTHML = '';
         var node = active_article.el.cloneNode();
+        detail_viewer.innerHTML = '';
         detail_viewer.appendChild(node);
 
         return;
