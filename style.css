@@ -35,7 +35,6 @@ section {
 h2 {
   font-weight: bold;
   padding: 0 1rem;
-  margin-top: 0.5em;
   margin-bottom: 0.5em; }
 
 h3 {
@@ -181,15 +180,15 @@ article {
     visibility: visible;
     opacity: 1; }
 
-article {
+.pickitem article {
   background: gray; }
-  article header {
+  .pickitem article header {
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     padding-top: 0.5em;
-    padding-bottom: 0.6em;
+    padding-bottom: 0.5em;
     background: #fdce37; }
 
 @-webkit-keyframes grow {
