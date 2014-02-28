@@ -123,10 +123,12 @@ function tilt_update() {
   if (good_tilt) {
 
     if (!is_steady) {
+      document.body.classList.remove("steady");
       timer.cancel();
       timer.hide();
     }
     else {
+      document.body.classList.add("steady");
       if (!timer.running){
         timer.show();
         timer.reset_and_start();
