@@ -181,6 +181,9 @@ article {
     visibility: visible;
     opacity: 1; }
 
+.pickitem article .content {
+  display: none; }
+
 @-webkit-keyframes grow {
   0% {
     -webkit-transform: scale(0); }
