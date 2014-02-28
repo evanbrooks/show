@@ -176,6 +176,9 @@ article {
   left: 0;
   right: 0;
   bottom: 0; }
+  article header {
+    padding-top: 0.5em;
+    padding-bottom: 0.5em; }
   .goodtilt article.active {
     visibility: visible;
     opacity: 1; }
@@ -187,8 +190,6 @@ article {
     top: 0;
     left: 0;
     right: 0;
-    padding-top: 0.5em;
-    padding-bottom: 0.5em;
     background: #fdce37; }
 
 @-webkit-keyframes grow {
