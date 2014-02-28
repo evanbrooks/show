@@ -66,7 +66,7 @@ for (var i = 0; i < regions.length; i++) {
 window.addEventListener("deviceorientation", tilt_detect, true);
 
 dismiss_btn.addEventListener("click", dismiss_detail, false);
-dismiss_btn.addEventListener("touchbegin", dismiss_detail, false);
+dismiss_btn.addEventListener("touchstart", dismiss_detail, false);
 
 function dismiss_detail(e) {
   e.preventDefault();
