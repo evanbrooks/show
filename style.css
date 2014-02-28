@@ -54,11 +54,11 @@ h4 {
   -webkit-transition: all 1s;
   visibility: visible; }
 
-.goodtilt .intro {
+.goodtilt:not(.steady) .intro {
   opacity: 0;
   -webkit-transition: all 0.5s;
   visibility: hidden; }
-.goodtilt .pickitem {
+.goodtilt:not(.steady) .pickitem {
   visibility: visible; }
 
 .pickitem {
