@@ -148,8 +148,19 @@ function tilt_update() {
         active_article = r;
         active_article.el.classList.add("active");
 
-        var node = active_article.el.cloneNode(true);
+        // Clear viewer
         detail_viewer.innerHTML = '';
+
+        // Get information
+        var node = active_article.el.cloneNode(true);
+
+        // Start loading all images
+        var srcnodes = node.querySelectorAll("[data-src]");
+        for (var i = 0; i < srcnodes.length; i++) {
+          srcnodes[i].src = srcnodes[i].getAttribute("data-src");
+        }
+
+        // Insert node
         detail_viewer.appendChild(node);
 
         return;
